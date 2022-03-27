@@ -22,7 +22,7 @@ public class NamesCase {
 
             default:
                 System.out.println("Добрый день, а вы кто?");
-
+                break;
         }
 
     }
