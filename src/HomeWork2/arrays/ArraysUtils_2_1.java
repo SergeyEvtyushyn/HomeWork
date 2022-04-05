@@ -32,7 +32,7 @@ public class ArraysUtils_2_1 {
         Scanner arr = new Scanner(System.in);
         System.out.println("Введите длину массива");
         int n = arr.nextInt();
-        System.out.println("Введите, до какого числа генерируется каждый элемент массива");
+        System.out.println("Введите, до какого числа генерируется каждый элемент массива (0-99)");
         int m = arr.nextInt();
 
         Random rand = new Random();

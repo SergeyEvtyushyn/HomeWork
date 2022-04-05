@@ -17,8 +17,12 @@ public class Arrays_2_4 {
         int[] Min2 = Min2(container1);
         System.out.println();
         int[] DelInt = DelInt(container1);
+        System.out.println();
 
-
+        int[] container2 = arrayRandom();
+        System.out.println();
+        int sumofdig = sumofdig(container2);
+        System.out.println();
     }
     public static int sumChet(int[] arr) {
         int m = arr.length;
@@ -70,7 +74,7 @@ public class Arrays_2_4 {
         int m = arr.length;
         int Min1 = arr[0];
 
-        for (int i = 0; i < m; i = i + 2) {
+        for (int i = 0; i < m; i++) {
             if ( arr[i] < Min1 ){
                 Min1 = arr[i];
             }
@@ -97,11 +101,15 @@ public class Arrays_2_4 {
 
 
         for (int i = 0; i < m; i++) {
-            boolean a1 = arr[i] > a;
-            boolean b1 = arr[i] < b;
-            if ( a1 && b1 ){
-                arr[i] = arr[i+1];
-            }
+
+                if (arr[i] >= a && arr[i] <= b) {
+                    while ( i  < m - 1) {
+                    arr[i] = arr[i++];
+                    i++;
+
+                    }
+                    arr[ m - 1 ] = 0;
+                }
 
         }
         System.out.print("Сжатый массив: ");
@@ -110,4 +118,21 @@ public class Arrays_2_4 {
         }
         return arr;
     }
+
+
+
+    public static int sumofdig(int[] arr) {
+        int m = arr.length;
+        int sum = 0;
+        for (int i = 0; i < m; i++) {
+            int a = arr[i] % 10;
+            int b = (arr[i] - a)/10;
+            System.out.print(a+" "  + b + " ");
+
+            sum = sum + a + b;
+        }
+        System.out.println("Сумма всех цифр массива: " + sum);
+        return sum;
+    }
+
 }
