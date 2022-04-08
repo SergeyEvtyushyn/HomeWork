@@ -91,7 +91,7 @@ public class Arrays_2_4 {
         return arr;
     }
 
-    public static int[] DelInt(int[] arr) { // Не доделано еще.
+    public static int[] DelInt(int[] arr) { // Работает с оговорками. Если следующее число за проверяемым тоже попадает в интервал, то оно не удаляется. В ином случае работает.
         int m = arr.length;
         Scanner ab = new Scanner(System.in);
         System.out.println("Введите нижнюю границу интервала");
@@ -100,21 +100,22 @@ public class Arrays_2_4 {
         int b = ab.nextInt();
 
 
-        for (int i = 0; i < m; i++) {
+        int x = 1;
+        for (int i = 0; i < m - 1; i++) {
+            if (arr[i] > a && arr[i] < b) {
+                for (int j = i; j < m - 1; j++) {
+                    arr[j] = 0;
+                    x = arr[j + 1];
+                    arr[j] = x;
+                    //arr[j + 1] = x;
 
-                if (arr[i] >= a && arr[i] <= b) {
-                    while ( i  < m - 1) {
-                    arr[i] = arr[i++];
-                    i++;
-
-                    }
-                    arr[ m - 1 ] = 0;
                 }
-
-        }
-        System.out.print("Сжатый массив: ");
-        for (int i = 0; i < m; i++) {
-            System.out.print(arr[i] + " ");
+                arr[m - 1] = 0;
+            }
+            }
+            System.out.print("Сжатый массив: ");
+            for (int i = 0; i < m; i++) {
+                System.out.print(arr[i] + " ");
         }
         return arr;
     }
@@ -127,7 +128,7 @@ public class Arrays_2_4 {
         for (int i = 0; i < m; i++) {
             int a = arr[i] % 10;
             int b = (arr[i] - a)/10;
-            System.out.print(a+" "  + b + " ");
+            //System.out.print(a+" "  + b + " ");
 
             sum = sum + a + b;
         }
