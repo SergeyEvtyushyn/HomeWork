@@ -1,32 +1,32 @@
 package HomeWork3.runners;
 
+import HomeWork3.calcs.simple.CalculatorWithMathCopy;
 
-import HomeWork3.calcs.simple.CalculatorWithMathExtends;
-
-public class CalculatorWithOperatorMain {
+public class CalculatorWithMathExtendsMain {
     public static void main(String[] args) {
-        CalculatorWithMathExtends a = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy a = new CalculatorWithMathCopy();
         a.setA(4.1);
 
-        CalculatorWithMathExtends b = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy b = new CalculatorWithMathCopy();
         b.setB(15);
 
-        CalculatorWithMathExtends c = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy c = new CalculatorWithMathCopy();
         c.setC(7);
 
-        CalculatorWithMathExtends d = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy d = new CalculatorWithMathCopy();
         d.setD(28);
 
-        CalculatorWithMathExtends e = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy e = new CalculatorWithMathCopy();
         e.setE(5);
 
-        CalculatorWithMathExtends exponent = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy exponent = new CalculatorWithMathCopy();
         exponent.setExponent(2);
 
-        CalculatorWithMathExtends calc = new CalculatorWithMathExtends();
+        CalculatorWithMathCopy calc = new CalculatorWithMathCopy();
 
         System.out.print(a.getA() + " + " + b.getB() + " * " + c.getC() + " + ( " + d.getD() + " / " + e.getE() + " ) ^ " + exponent.getExponent() + " = ");
         System.out.println( a.getA() + calc.AmultB( b.getB(), c.getC() ) + calc.AdivBpow(d.getD(), e.getE(), exponent.getExponent()) ); // Результат 140,45999999999998, совпадает с заданием 1 в WithoutCalculatorMain
+
 
     }
 }

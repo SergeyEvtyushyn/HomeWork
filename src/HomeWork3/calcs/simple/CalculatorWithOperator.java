@@ -1,77 +1,150 @@
 package HomeWork3.calcs.simple;
 
 public class CalculatorWithOperator {
-        int a;
-        int b;
+        double a;
+        double b;
+        double c;
+        double d;
+        double e;
+        int exponent;
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public int getA() {
+    public double getA() {
         return a;
     }
 
-    public void setB(int b) {
+    public void setB(double b) {
         this.b = b;
     }
 
-    public int getB() {
+    public double getB() {
         return b;
     }
 
-    public int AplusB(int a, int b){
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
+    public double getD() {
+        return d;
+    }
+
+    public void setD(double d) {
+        this.d = d;
+    }
+
+    public void setE(double e) {
+        this.e = e;
+    }
+
+    public double getE() {
+        return e;
+    }
+
+    public int getExponent() {
+        return exponent;
+    }
+
+    public void setExponent(int exponent) {
+        this.exponent = exponent;
+    }
+
+    /**
+     * Метод сложения двух чисел
+     * @param a
+     * @param b
+     * @return Возврат суммы двух чисел
+     */
+    public double AplusB(double a, double b){
         return a + b;
     }
 
-    public int AminusB(int a, int b){
+    /**
+     * Метод вычитания из одного числа другого
+     * @param a
+     * @param b
+     * @return Разность двух чисел
+     */
+    public double AminusB(double a, double b){
         return a - b;
     }
 
-    public int AmultB(int a, int b){
+    /**
+     * Метод умножения одного числа на другое
+     * @param a
+     * @param b
+     * @return Результат умножения
+     */
+    public double AmultB(double a, double b){
         return a * b;
     }
 
-    public double AdivB(int a, double b){
+    /**
+     * Метод деления одного числа на другое
+     * @param a делимое
+     * @param b делитель
+     * @return Результат деления
+     */
+    public double AdivB(double a, double b){
         return a / b;
     }
 
-    public double AdivBpow2 (int a, double b){
+    /**
+     * Метод возведения дробного числа в целую степень
+     * @param a Числитель дробного числа
+     * @param b Знаменатель дробного числа
+     * @param exponent Степень возведения
+     * @return Дробное число в целой степени
+     */
+     public double AdivBpow (double a, double b, int exponent){
+
         double x = a / b;
         if (x < 0){
             x *= - 1;
         }
-        return x * x;
-    }
-
-    public double ABabs (int a, double b){
-        double x = a / b;
-        if (x < 0){
-            x *= - 1;
+        int i = 1;
+        while ( i < exponent){
+            x *= x;
+            i++;
         }
         return x;
     }
 
+    /**
+     * Метод вычесления модуля числа
+     * @param a Число
+     * @return Модуль числа
+     */
+    public double ABabs (double a){
+        if (a < 0){
+            a *= - 1;
+        }
+        return a;
+    }
 
 
-    public double[] ABradical (int a, int b){
+    /**
+     * Метод вычисления квадратного корня из положительного числа
+     * @param a Число, из которого извлекаетя корень
+     * @return Результат вычисления
+     */
+    public double Aradical (double a){
 
         if (a < 0){
             a *= - 1;
         }
-        if (b < 0){
-            b *= - 1;
-        }
         double x = a;
-        double y = b;
-
         for (int i = 0; i < 100; i++) {
             x = ( x + a/x) / 2;
-            y = ( y + b/y) / 2;
-
         }
-
-       return new double[] {x, y};
+       return x;
 
     }
 
