@@ -1,6 +1,8 @@
 package HomeWork3.calcs.simple;
 
-public class CalculatorWithOperator {
+import HomeWork3.calcs.api.ICalculator;
+
+public class CalculatorWithOperator implements ICalculator {
         double a;
         double b;
         double c;
@@ -122,7 +124,7 @@ public class CalculatorWithOperator {
      * @param a Число
      * @return Модуль числа
      */
-    public double ABabs (double a){
+    public double abs (double a){
         if (a < 0){
             a *= - 1;
         }
@@ -135,7 +137,7 @@ public class CalculatorWithOperator {
      * @param a Число, из которого извлекаетя корень
      * @return Результат вычисления
      */
-    public double Aradical (double a){
+    public double radical (double a){
 
         if (a < 0){
             a *= - 1;

@@ -1,6 +1,8 @@
 package HomeWork3.calcs.simple;
 
-public class CalculatorWithMathExtends extends CalculatorWithOperator{
+import HomeWork3.calcs.api.ICalculator;
+
+public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
 
     /**
      * Метод с переопределением возведения дробного числа в целую степень
@@ -20,7 +22,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator{
      * @param a Число
      * @return Модуль числа
      */
-    public double ABabs (double a){
+    public double abs (double a){
         a = Math.abs(a);
         return a;
     }
@@ -31,7 +33,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator{
      * @param a Число, из которого извлекаетя корень
      * @return Результат вычисления
      */
-    public double Aradical (double a){
+    public double radical (double a){
         a = Math.sqrt(a);
         return a;
     }

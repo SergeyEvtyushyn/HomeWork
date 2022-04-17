@@ -7,7 +7,7 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
     long countOperation;
 
     /**
-     * Метод длясчетчика количества операций
+     * Метод для счетчика количества операций
      */
     public void incrementCountOperation(){
         countOperation = countOperation + 1;

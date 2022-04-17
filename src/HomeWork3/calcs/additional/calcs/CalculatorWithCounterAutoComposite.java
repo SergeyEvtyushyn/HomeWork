@@ -1,10 +1,67 @@
 package HomeWork3.calcs.additional.calcs;
 
-import HomeWork3.calcs.simple.CalculatorWithMathExtends;
+import HomeWork3.calcs.additional.runners.CalculatorWithCounterAutoSuperMain;
 
-public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
+public class CalculatorWithCounterAutoComposite {
+
+    CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
 
     long countOperation;
+
+    double a;
+    double b;
+    double c;
+    double d;
+    double e;
+    int exponent;
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
+    public double getC() {
+        return c;
+    }
+
+    public void setD(double d) {
+        this.d = d;
+    }
+
+    public double getD() {
+        return d;
+    }
+
+    public double getE() {
+        return e;
+    }
+
+    public void setE(double e) {
+        this.e = e;
+    }
+
+    public void setExponent(int exponent) {
+        this.exponent = exponent;
+    }
+
+    public int getExponent() {
+        return exponent;
+    }
 
     /**
      * Метод сложения двух чисел с вызовом из материнского класса со счетчиком операций
@@ -13,8 +70,8 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return Сумма двух чисел
      */
     public double AplusB(double a, double b){
-        countOperation = countOperation + 1;
-        return super.AplusB( a, b );
+        ++countOperation;
+        return calc.AplusB( a, b );
     }
 
     /**
@@ -24,8 +81,8 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return Разность двух чисел
      */
     public double AminusB(double a, double b){
-        countOperation = countOperation + 1;
-        return super.AminusB( a, b );
+        ++countOperation;
+        return calc.AminusB( a, b );
     }
 
     /**
@@ -35,8 +92,8 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return Умножение двух чисел
      */
     public double AmultB(double a, double b){
-        countOperation = countOperation + 1;
-        return super.AmultB( a, b );
+        ++countOperation;
+        return calc.AmultB( a, b );
     }
 
     /**
@@ -46,8 +103,8 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return Результат деления
      */
     public double AdivB(double a, double b){
-        countOperation = countOperation + 1;
-        return super.AdivB( a, b );
+        ++countOperation;
+        return calc.AdivB( a, b );
     }
 
     /**
@@ -58,8 +115,8 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return Рузультат возведения в степень
      */
     public double AdivBpow (double a, double b, int exponent){
-        countOperation = countOperation + 1;
-        return super.AdivBpow(a,  b, exponent);
+        ++countOperation;
+        return calc.AdivBpow(a,  b, exponent);
     }
 
     /**
@@ -67,9 +124,9 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @param a Число
      * @return Модуль числа
      */
-    public double abs (double a){
-        countOperation = countOperation + 1;
-        return super.abs (a);
+    public double ABabs (double a){
+        ++countOperation;
+        return calc.abs (a);
     }
 
     /**
@@ -77,9 +134,9 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @param a Число, из которого извлекаетя корень
      * @return Корень из числа
      */
-    public double radical (double a){
-        countOperation = countOperation + 1;
-        return super.radical (a);
+    public double Aradical (double a){
+        ++countOperation;
+        return calc.radical (a);
     }
 
     /**
@@ -89,4 +146,5 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     public long getCountOperation(){
         return countOperation;
     }
+
 }

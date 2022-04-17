@@ -1,14 +1,24 @@
-package HomeWork3.calcs.simple;
+package HomeWork3.calcs.additional.calcs;
 
-import HomeWork3.calcs.api.ICalculator;
+import HomeWork3.calcs.simple.CalculatorWithMathCopy;
 
-public class CalculatorWithMathCopy implements ICalculator {
-        double a;
-        double b;
-        double c;
-        double d;
-        double e;
-        int exponent;
+public class CalculatorWithCounterAutoAgregation {
+
+    private CalculatorWithMathCopy calc;
+
+    long countOperation;
+    double a;
+    double b;
+    double c;
+    double d;
+    double e;
+    int exponent;
+
+    public CalculatorWithCounterAutoAgregation(CalculatorWithMathCopy calc){
+        this.calc = calc;
+
+    }
+
 
     public void setA(double a) {
         this.a = a;
@@ -59,19 +69,23 @@ public class CalculatorWithMathCopy implements ICalculator {
     }
 
     public double AplusB(double a, double b){
-        return a + b;
+        ++countOperation;
+        return calc.AplusB(a, b);
     }
 
     public double AminusB(double a, double b){
-        return a - b;
+        ++countOperation;
+        return calc.AminusB( a, b);
     }
 
     public double AmultB(double a, double b){
-        return a * b;
+        ++countOperation;
+        return calc.AmultB( a, b );
     }
 
     public double AdivB(double a, double b){
-        return a / b;
+        ++countOperation;
+        return calc.AdivB( a, b);
     }
 
     /**
@@ -82,8 +96,8 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return Результат вычисления
      */
     public double AdivBpow(double a, double b, int exponent){
-        double x = a / b;
-        return Math.pow(Math.abs(x), exponent);
+        ++countOperation;
+        return calc.AdivBpow( a, b, exponent );
     }
 
     /**
@@ -91,9 +105,9 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @param a Вводимое значение
      * @return Модуль числа а
      */
-     public double abs(double a){
-        a = Math.abs(a);
-        return a;
+    public double abs(double a){
+        ++countOperation;
+        return calc.abs(a);
     }
 
     /**
@@ -103,9 +117,17 @@ public class CalculatorWithMathCopy implements ICalculator {
      */
 
     public double radical (double a){
-        a = Math.sqrt(a);
-        return a;
+        ++countOperation;
+        return calc.radical ( a );
 
+    }
+
+    /**
+     * Метод возврата количесвта операций
+     * @return Количество математических операций
+     */
+    public long getCountOperation(){
+        return countOperation;
     }
 
 }
