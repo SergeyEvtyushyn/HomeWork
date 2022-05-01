@@ -9,5 +9,6 @@
 5. Операторы ветвления. NamesIf.java - оператор If.
 	NamesIf_Else.java - оператор If-Else.
 	NamesCase.java - оператор Case.
+5.1 Вариант пятого задания с применением Interface.
 6. Интерпритация введенных цифр в телефонный номер по шаблону. Выполнено через массив. createPhonNumber.java.
 7. Перевод и вывод значения числа из десятичного вида в двоичный. StringtoBinaryString.java.
