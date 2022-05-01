@@ -24,7 +24,7 @@ public class Arrays_2_4 {
         int sumofdig = sumofdig(container2);
         System.out.println();
     }
-    public static int sumChet(int[] arr) {
+    public static int sumChet(int[] arr) { // Сумма четных положительных элементов массива. Задание 2.4.1
         int m = arr.length;
         int sum = 0;
         for (int i = 0; i < m; i++) {
@@ -39,7 +39,7 @@ public class Arrays_2_4 {
         return sum;
     }
 
-    public static int MaxChetI(int[] arr) {
+    public static int MaxChetI(int[] arr) { // Максимальный элемент массива с четным индексом. Задание 2.4.2
         int m = arr.length;
         int MaxChetI = arr[0];
         for (int i = 0; i < m; i = i + 2) {
@@ -51,7 +51,7 @@ public class Arrays_2_4 {
         return MaxChetI;
     }
 
-    public static int[] LessAref(int[] arr) {
+    public static int[] LessAref(int[] arr) { // Элемент массива меньше среднего арифметического массива. Задание 2.4.3
         int m = arr.length;
         int sum = 0;
         for (int i = 0; i < m; i++) {
@@ -70,7 +70,7 @@ public class Arrays_2_4 {
         return arr;
     }
 
-    public static int[] Min2(int[] arr) {
+    public static int[] Min2(int[] arr) { // Два наименьших элемента массива . Задание 2.4.4
         int m = arr.length;
         int Min1 = arr[0];
 
@@ -91,7 +91,7 @@ public class Arrays_2_4 {
         return arr;
     }
 
-    public static int[] DelInt(int[] arr) { // Работает с оговорками. Если следующее число за проверяемым тоже попадает в интервал, то оно не удаляется. В ином случае работает.
+    public static int[] DelInt(int[] arr) { // 2.4.5. Работает с оговорками. Если следующее число за проверяемым тоже попадает в интервал, то оно не удаляется. В ином случае работает.
         int m = arr.length;
         Scanner ab = new Scanner(System.in);
         System.out.println("Введите нижнюю границу интервала");
@@ -107,7 +107,6 @@ public class Arrays_2_4 {
                     arr[j] = 0;
                     x = arr[j + 1];
                     arr[j] = x;
-                    //arr[j + 1] = x;
 
                 }
                 arr[m - 1] = 0;
@@ -122,7 +121,7 @@ public class Arrays_2_4 {
 
 
 
-    public static int sumofdig(int[] arr) {
+    public static int sumofdig(int[] arr) { // Сумма цифр массива. Задание 2.4.6
         int m = arr.length;
         int sum = 0;
         for (int i = 0; i < m; i++) {

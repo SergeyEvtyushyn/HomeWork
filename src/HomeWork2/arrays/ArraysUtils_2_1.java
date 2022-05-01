@@ -11,7 +11,7 @@ public class ArraysUtils_2_1 {
 
     }
 
-    public static int[] arrayFromConsole() {
+    public static int[] arrayFromConsole() { // Метод для ввода массива через консоль. Задание 2.1.1
 
         Scanner arr = new Scanner(System.in);
         System.out.println("Введите длину массива");
@@ -27,7 +27,7 @@ public class ArraysUtils_2_1 {
         return container;
     }
 
-    public static int[] arrayRandom() {
+    public static int[] arrayRandom() { // Метод для ввода массива по параметрам через рандом. Задание 2.1.2
 
         Scanner arr = new Scanner(System.in);
         System.out.println("Введите длину массива");

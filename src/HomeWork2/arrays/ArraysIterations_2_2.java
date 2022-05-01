@@ -14,7 +14,7 @@ public class ArraysIterations_2_2 {
 
     }
 
-    public static int[] arrayPrint(int[] arr) {
+    public static int[] arrayPrint(int[] arr) { // Перебор массива при помощи do..while, while, for, for ich. Задание 2.2.1
         int m = arr.length;
 
         System.out.print("Введенный массив(do...while): ");
@@ -47,7 +47,7 @@ public class ArraysIterations_2_2 {
     }
 
 
-    public static int[] evrysecond(int[] arr) {
+    public static int[] evrysecond(int[] arr) { // Вывод каждого второго элемента массива. Задание 2.2.2
         int m = arr.length;
 
         System.out.print("Каждый второй элемент (do...while): ");
@@ -75,7 +75,7 @@ public class ArraysIterations_2_2 {
         return arr;
     }
 
-    public static int[] arrayPrintRevers(int[] arr) {
+    public static int[] arrayPrintRevers(int[] arr) { // Вывод элементов массива в обратном порядке. Задание 2.2.3
         int m = arr.length;
         //int[] arr1 = new int[m];
 
@@ -101,10 +101,6 @@ public class ArraysIterations_2_2 {
         }
         System.out.println();
 
-        //System.out.print("Массив в обратном порядке (for ich): ");
-        //for (int element : arr) {
-        //   System.out.print(element + " ");
-        //}
         return arr;
     }
 }
