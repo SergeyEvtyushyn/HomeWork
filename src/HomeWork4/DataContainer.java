@@ -31,26 +31,33 @@ public class DataContainer<E> {
         return result;
     }
 
+    /**
+     * Метод наполнения массива данными типа Е. Задание 4.
+     * @param data даные типа Е
+     * @return Возвращаемое значение позиции добавленного элемента
+     */
     public int addData(E data) {
         if (this.data.length == 0 || this.data[this.data.length - 1] != null ){
           this.data = Arrays.copyOf(this.data, this.data.length + 1);
         }
-        if(this.data[this.data.length - 1] != null){
-            System.out.println("Место кончилось"); //TODO заменить....
-        }
 
         this.data[this.data.length - 1] = data;
-       return add(this.data.length - 1);
+       return add(this.data.length - 1); // Фиксация номера позиции введенного элемента
     }
 
 
-    public E[] getData() {
+    public E[] getData() { // Getter для массива из элементов E. Задание 6.
         return this.data;
     }
-    
+
+    /**
+     * Метод вывода элемента, находящегося на опредленной позиции. Задание 5.
+     * @param i Номер необходимой позиции
+     * @return Искомый элемент масиива
+     */
     public E get(int i) {
         E tmp = null;
-            if (i < 0 || i > this.data.length - 1) { // TODO Доделать с null'ом
+            if (i < 0 || i > this.data.length - 1) {
                 System.out.println("Элемента с таким номером не существует");
              } else {
                 tmp = data[i];
@@ -59,6 +66,11 @@ public class DataContainer<E> {
          return tmp;
     }
 
+    /**
+     * Метод удаления элемента массива на конкретной позиции. Задание 7.
+     * @param index Позиция удаляемого жлемента
+     * @return Возвращает true, если удалился элемент, false, если не удалился
+     */
     public boolean delete(int index){
 
         if (index < 0 || index > this.data.length - 1) {
@@ -74,7 +86,11 @@ public class DataContainer<E> {
         }
     }
 
-
+    /**
+     * Сравненеие и удаление элемнта массива, соответствующего введенному. Задание 8.
+     * @param data Сравниваемый параметр
+     * @return Возвращает true, если удалился элемент, false, если не удалился
+     */
     public boolean delete(E data) {
         for (int i = 0; i < this.data.length; i++) {
             if (this.data[i].equals(data)) {
@@ -86,6 +102,10 @@ public class DataContainer<E> {
 
     }
 
+    /**
+     * Пузырьковый метод сортировки массива по возарстанию. Задание 9.
+     * @param cmp Тип Компаратора
+     */
     public void sort(Comparator<E> cmp){
         for (int i = 0; i < this.data.length - 1; i++) {
             for (int j = 0; j < this.data.length - 1; j++) {
@@ -100,7 +120,7 @@ public class DataContainer<E> {
         }
     }
 
-
+    // Переопрпеделение методав toString c выводом без ячеек null. Задание 10.
     @Override
     public String toString() {
 
@@ -123,11 +143,9 @@ public class DataContainer<E> {
     }
 
 
-
+    // Метод фиксации номера позиции добавленного элемента.
     public static int add(int i){
-       // int x = i;
-       //System.out.println("Добавлен элемент на позицию " + i);
-       return i;
+        return i;
    }
 
 
