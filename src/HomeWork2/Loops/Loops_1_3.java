@@ -6,7 +6,7 @@ public class Loops_1_3 {
     public static void main(String[] args) {
         Scanner an = new Scanner(System.in);
         System.out.println("Введите число:");
-        float a = an.nextFloat();
+        double a = an.nextDouble();
         System.out.println("Введите степень(целое и неотрицательное число):");
 
         double n = an.nextDouble();
@@ -16,7 +16,7 @@ public class Loops_1_3 {
         }
 
 
-        float a_n = 1;
+        double a_n = 1;
         for (int i = 0; i < n; i++) {
             a_n = a_n * a;
         }

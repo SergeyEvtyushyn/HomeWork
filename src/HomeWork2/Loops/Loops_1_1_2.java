@@ -12,19 +12,22 @@ public class Loops_1_1_2 {
             System.out.println("Неверное число. Введите заново.");
             n = num.nextInt();
         }
-
-        System.out.print(" = " + multiply(n));
+        for (int i = 1; i < n; i++) {
+            System.out.print(i +" * ");
+        }
+        for (int i = n; i <= n; i++) {
+            System.out.print(i);
+        }
+    System.out.print(" = " + multiply(n));
 
     }
     private static long multiply(int m) {  // Рекурсия
         long mul = 1;
 
         if (m == 1 ){
-            System.out.println("= 1");
-            return mul;
+            return 1;
         }
-        System.out.print(mul + " * ");
-        mul = mul * multiply(m);
+        mul = m * multiply(m-1);
         return mul;
     }
 

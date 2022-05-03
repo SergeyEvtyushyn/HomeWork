@@ -16,7 +16,7 @@
 			
 	2.2 Создать класс ArraysIteration. ArraysIteration_2_2
  
-	2.3* Выполнить задание 2.2 иным способом. TODO...
+	2.3* Выполнить задание 2.2 иным способом. ArraysIterationsInterface_2_3.java
 	
 2.4  Arrays_2_4
 

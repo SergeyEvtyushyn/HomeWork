@@ -16,7 +16,10 @@ public class Arrays_2_4 {
         System.out.println();
         int[] Min2 = Min2(container1);
         System.out.println();
-        int[] DelInt = DelInt(container1);
+
+        int[] container3 = arrayRandom();
+        System.out.println();
+        int[] DelInt = DelInt(container3);
         System.out.println();
 
         int[] container2 = arrayRandom();
@@ -51,47 +54,61 @@ public class Arrays_2_4 {
         return MaxChetI;
     }
 
-    public static int[] LessAref(int[] arr) { // Элемент массива меньше среднего арифметического массива. Задание 2.4.3
+    public static int[] LessAref(int[] arr) { // Элементы массива меньше среднего арифметического массива. Задание 2.4.3
         int m = arr.length;
         int sum = 0;
+
         for (int i = 0; i < m; i++) {
             sum = sum + arr[i];
-
         }
         int sumAref = sum / m;
         System.out.print("Элементы меньше среднего арифметического: ");
+        int length = 0;
         for (int i = 0; i < m; i++) {
-            if ( arr[i] < sumAref ){
-
+            if (arr[i] < sumAref) {
                 System.out.print(arr[i] + " ");
+                length++;
             }
 
         }
-        return arr;
+
+        int[] arr1 = new int[length];
+        int j = 0;
+        for (int i = 0; i < m; i++) {
+            if (arr[i] < sumAref) {
+                arr1[j] = arr[i];
+                j++;
+            }
+
+        }
+        return arr1;
     }
 
-    public static int[] Min2(int[] arr) { // Два наименьших элемента массива . Задание 2.4.4
-        int m = arr.length;
-        int Min1 = arr[0];
+    public static int[] Min2 (int[] arr) { // Два наименьших элемента массива . Задание 2.4.4
 
-        for (int i = 0; i < m; i++) {
-            if ( arr[i] < Min1 ){
-                Min1 = arr[i];
+        int x;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    x = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = x;
+                }
+
             }
         }
-        System.out.print("Первое минимальное число: " + Min1 + ". ");
+            System.out.print("Первое минимальное число: " + arr[0] + ". ");
+            System.out.print("Второе минимальное число: " + arr[1]);
 
-        int Min2 = arr[0];
-        for (int i = 0; i < m; i++) {
-            if (arr[i] < Min2 && arr[i] > Min1){
-                Min2 = arr[i];
-            }
-        }
-        System.out.print("Второе минимальное число: " + Min2);
-        return arr;
+            int[] Min1_2 = new int[2];
+            Min1_2[0] = arr[0];
+            Min1_2[1] = arr[1];
+            return Min1_2;
+
     }
 
-    public static int[] DelInt(int[] arr) { // 2.4.5. Работает с оговорками. Если следующее число за проверяемым тоже попадает в интервал, то оно не удаляется. В ином случае работает.
+    public static int[] DelInt(int[] arr) { // 2.4.5.  Сжать массив, удалив элементы, принадлежащие интервалу
+
         int m = arr.length;
         Scanner ab = new Scanner(System.in);
         System.out.println("Введите нижнюю границу интервала");
@@ -99,19 +116,24 @@ public class Arrays_2_4 {
         System.out.println("Введите верхнюю границу интервала");
         int b = ab.nextInt();
 
-
         int x = 1;
+        boolean flag = true;
+        while (flag) {
         for (int i = 0; i < m - 1; i++) {
-            if (arr[i] > a && arr[i] < b) {
-                for (int j = i; j < m - 1; j++) {
-                    arr[j] = 0;
-                    x = arr[j + 1];
-                    arr[j] = x;
+               if (arr[i] > a && arr[i] < b) {
+                   for (int j = i; j < m - 1; j++) {
+                       x = arr[j + 1];
+                       arr[j] = 0;
+                       arr[j] = x;
+                   }
+                   arr[m - 1] = 0;
+                   flag = true;
 
-                }
-                arr[m - 1] = 0;
-            }
-            }
+               } else {
+                   flag = false;
+               }
+           }
+        }
             System.out.print("Сжатый массив: ");
             for (int i = 0; i < m; i++) {
                 System.out.print(arr[i] + " ");
@@ -127,7 +149,7 @@ public class Arrays_2_4 {
         for (int i = 0; i < m; i++) {
             int a = arr[i] % 10;
             int b = (arr[i] - a)/10;
-            //System.out.print(a+" "  + b + " ");
+
 
             sum = sum + a + b;
         }

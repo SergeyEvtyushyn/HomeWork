@@ -1,16 +1,18 @@
 package HomeWork2.Loops;
 
-public class Loops_1_2 {
-    public static void main(String[] args) {
+public class Loops_1_2_ {
 
-        String s = null;
 
-        for (String arg : args) {
-            s = arg;
+    public static long count(String m) {
 
-        }
+//      String s = null;
 
-        char[] arr = s.toCharArray();
+//      for (String arg : m) {
+//          s = arg;
+
+//      }
+
+        char[] arr = m.toCharArray();
 
         int res = 1;
         int i =0;
@@ -27,6 +29,6 @@ public class Loops_1_2 {
         }
         System.out.println(" = " + res);
 
-
+        return res;
     }
 }
