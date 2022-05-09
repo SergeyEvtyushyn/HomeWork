@@ -33,7 +33,7 @@ public class bookRead {
             txtIn = wptxt.read();
         }
         String s = alltext.toString();
-        String[] s2 = s.split("[ .,!?:;]+");
+        String[] s2 = s.split("[ .,!?:;]+"); // TODO... Проверить на правильность принятия всех условий для слов со знаками
 
         // Помещение слов из текста в коллекцию Set и обработка ее.Задание 2.1
         HashSet<String> wpset = new HashSet<String>();
