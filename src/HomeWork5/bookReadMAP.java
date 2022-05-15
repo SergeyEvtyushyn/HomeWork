@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class bookReadMAP extends bookRead {
-   
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -25,12 +25,21 @@ public class bookReadMAP extends bookRead {
             System.out.println("Не могу прочитать файл");
         }
 
+        Map<String, Integer> sortedwpputall = sortedwpputall(fileToString);
+
         System.out.println("Какое количество топ слов выводить?");
         int n = sc.nextInt();
+        boolean key1 = false;
+        while (key1 == false) {
+            if (n > sortedwpputall.size()){
+                System.out.println("Количество слов в тексте меньше запрашиваемого. Введите снова.");
+                n = sc.nextInt();
+            } else {
+                key1 = true;
+            }
+        }
 
         System.out.println("Файл с текстом: " + file.getName());
-
-        Map<String, Integer> sortedwpputall = sortedwpputall(fileToString);
         int i = 0;
         // Вывод n-задаваемых значений после сортировки задание. Задание 2.2
         for(Map.Entry<String, Integer> entry : sortedwpputall.entrySet()){
