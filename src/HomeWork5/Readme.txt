@@ -2,3 +2,4 @@
 
 Задание 2.1. Файл bookRead.java.
 Задание 2.2. Файл bookReadMAP.java.
+Задание 3. Файлы ISearchEngine.java и ISearchEngineMain.java.
