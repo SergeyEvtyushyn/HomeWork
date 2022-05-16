@@ -27,7 +27,6 @@ public interface ISearchEngine {
      * @param fileToString Массив слов
      * @return Сортированнаяколлекция по знпчению
      */
-
     default Map<String, Integer> sortedwpputall(String[] fileToString){
         Map<String, Integer> wpputall = new HashMap<>();
 
