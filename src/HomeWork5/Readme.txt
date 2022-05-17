@@ -10,7 +10,7 @@
 	4.4.
 	4.5.
 Задание 5.
-	5.1.
+	5.1. Файл ISearchEngineMainWandP.java
 	5.2.
 Задание 6.
 Задание 7. Файл chooseBookFindWord.java.
